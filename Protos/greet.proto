@@ -8,6 +8,9 @@ package greet;
 service Greeter {
   // Sends a greeting
   rpc SendStatus (SRequest) returns (SResponse);
+  rpc SendStatusSS (SRequest) returns (stream SResponse);
+  rpc SendStatusCS (stream SRequest) returns (SResponse);
+  rpc SendStatusBD (stream SRequest) returns (stream SResponse);
 }
 // Status request
 message SRequest {
